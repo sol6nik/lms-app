@@ -32,19 +32,19 @@ function LogoTitle() {
     const [theme, setTheme] = useTheme(isFocused)
 
     return (
-        <SafeAreaView style={{ padding: 20, paddingVertical: 0 }}>
-            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between' }}>
+        <SafeAreaView style={{ paddingVertical: 0, marginBottom: 21, marginTop: 10  }}>
+            <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'space-between', padding: 20 }}>
                 <TouchableOpacity onPress={() => navigation.navigate('Profile')}>
-                    <Ionicons name="ios-person-circle-sharp" size={25} color={theme == 'dark' ? "#fff" : "#393A39"} />
+                    <Ionicons name="ios-person-circle-sharp" size={40} color={theme == 'dark' ? "#fff" : "#393A39"} />
                 </TouchableOpacity>
 
                 <View style={{
                     flexDirection: 'row', alignItems: 'center', marginLeft: 20, marginRight: 20,
                     backgroundColor: theme == 'dark' ? '#292929' : '#F0F0F0',
-                    borderRadius: 10, height: 35,
+                    borderRadius: 20, height: 40,
                 }}>
                     <FontAwesome name="search" size={15} color={theme == 'dark' ? "#fff" : "#393A39"} style={{ margin: 10 }} />
-                    <TextInput placeholder='search' placeholderTextColor={theme == 'dark' ? '#5F5F5F' : '#393A39'} style={{
+                    <TextInput placeholder='Поиск...' placeholderTextColor={theme == 'dark' ? '#5F5F5F' : '#393A39'} style={{
                         borderColor: theme == 'dark' ? '#fff' : '#393A39',
                         paddingHorizontal: 0,
                         color: theme == 'dark' ? '#fff' : '#393A39',
@@ -53,7 +53,7 @@ function LogoTitle() {
                 </View>
 
                 <TouchableOpacity onPress={() => Alert.alert('NOTIFICATIONS')}>
-                    <Ionicons name="notifications" size={25} color={theme == 'dark' ? "#fff" : "#393A39"} onPress={() => navigation.navigate('Noti')} />
+                    <Ionicons name="notifications" size={35} color={theme == 'dark' ? "#fff" : "#393A39"} onPress={() => navigation.navigate('Noti')} />
                 </TouchableOpacity>
             </View>
         </SafeAreaView>

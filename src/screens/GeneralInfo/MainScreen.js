@@ -22,6 +22,8 @@ export default function MainScreen() {
                     <View>
                         <Text style={{
                             marginBottom: 15,
+                            marginLeft: 5,
+                            marginTop: 10,
                             fontSize: 25,
                             fontFamily: 'gilroy-semibold',
                             color: theme == 'dark' ? '#FFF' : '#000'
@@ -35,6 +37,7 @@ export default function MainScreen() {
                         <Text style={{
                             marginTop: 20,
                             marginBottom: 15,
+                            marginLeft: 5,
                             fontSize: 25,
                             fontFamily: 'gilroy-semibold',
                             color: theme == 'dark' ? '#FFF' : '#000'
@@ -48,6 +51,7 @@ export default function MainScreen() {
                         <Text style={{
                             marginTop: 20,
                             marginBottom: 15,
+                            marginLeft: 5,
                             fontSize: 25,
                             fontFamily: 'gilroy-semibold',
                             color: theme == 'dark' ? '#FFF' : '#000'

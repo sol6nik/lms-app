@@ -93,24 +93,24 @@ const HomeworkSl = () => {
     const [theme, setTheme] = useTheme(isFocused);
 
     const HOMEWORK = [
-        { id: '1', date_to: '12.05.2021', title_hw: 'Лабораторная работа №1', description_hw: 'В самостоятельной работе необходимо решить задачи по теме "Матрицы"', },
-        { id: '2', date_to: '12.05.2021', title_hw: 'Лабораторная работа №2', description_hw: 'В самостоятельной работе необходимо решить задачи по теме "Матрицы"', },
-        { id: '3', date_to: '12.05.2021', title_hw: 'Лабораторная работа №3', description_hw: 'В самостоятельной работе необходимо решить задачи по теме "Матрицы"', },
-        { id: '4', date_to: '12.05.2021', title_hw: 'Лабораторная работа №4', description_hw: 'В самостоятельной работе необходимо решить задачи по теме "Матрицы"', },
+        { id: '1', date_to: 'До 12.05.2021', title_hw: 'Лабораторная работа №1', description_hw: 'В самостоятельной работе необходимо решить задачи по теме "Матрицы"', },
+        { id: '2', date_to: 'До 12.05.2021', title_hw: 'Лабораторная работа №2', description_hw: 'В самостоятельной работе необходимо решить задачи по теме "Матрицы"', },
+        { id: '3', date_to: 'До 12.05.2021', title_hw: 'Лабораторная работа №3', description_hw: 'В самостоятельной работе необходимо решить задачи по теме "Матрицы"', },
+        { id: '4', date_to: 'До 12.05.2021', title_hw: 'Лабораторная работа №4', description_hw: 'В самостоятельной работе необходимо решить задачи по теме "Матрицы"', },
     ];
 
     const HomeworkSlideComponent = ({ item }) => (
-        <View style={[theme === 'dark' ? styles.itemDark : styles.item]}>
+        <View style={[theme === 'dark' ? styles.itemDark : styles.item, { borderRadius: 25 }]}>
             <View>
                 <View style={[theme === 'dark' ? styles.timeBgDark : styles.timeBg]}>
                     <Text style={[theme === 'dark' ? styles.titleTimeDark : styles.titleTime, { fontFamily: 'gilroy-regular' }]}>{item.date_to}</Text>
                 </View>
 
-                <Text style={[theme === 'dark' ? styles.titleDark : styles.title, { fontFamily: 'gilroy-semibold' }]}> {item.title_hw}</Text>
+                <Text style={[theme === 'dark' ? styles.titleDark : styles.title, { fontFamily: 'gilroy-semibold' }]}>{item.title_hw}</Text>
                 <Text style={theme === 'dark' ? styles.descriptionDark : styles.description}>{item.description_hw}</Text>
 
                 <TouchableOpacity style={styles.buttonComplete} onPress={() => navigation.navigate('ReadyHomeWork')}>
-                    <Text style={{ fontFamily: 'gilroy-medium', fontSize: 17 }}>Выполнить</Text>
+                    <Text style={{ fontFamily: 'gilroy-medium', fontSize: 20 }}>Выполнить</Text>
                 </TouchableOpacity>
             </View>
         </View>
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
     },
     buttonComplete: {
         backgroundColor: '#90B3E7',
-        width: 319,
+        width: 350,
         height: 50,
         marginTop: 15,
         alignItems: 'center',
@@ -205,7 +205,7 @@ const styles = StyleSheet.create({
         fontFamily: 'gilroy-medium'
     },
     description: {
-        color: '#000',
+        color: '#808080',
         fontSize: 17,
         fontFamily: 'gilroy-medium'
     }
