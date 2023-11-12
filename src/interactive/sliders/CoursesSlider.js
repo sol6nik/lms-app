@@ -84,25 +84,25 @@ export default function CoursesSl() {
             id: "1",
             img: require("../../images/course_bg.png"),
             from_date: "12.05.2022",
-            title: "Управление стратегическими проектами",
+            title: "Управление стратегическими коммуникациями",
         },
         {
             id: "2",
             img: require("../../images/course_bg.png"),
             from_date: "15.05.2022",
-            title: "Управление стратегическими проектами",
+            title: "Управление стратегическими коммуникациями",
         },
         {
             id: "3",
             img: require("../../images/course_bg.png"),
             from_date: "18.05.2022",
-            title: "Управление стратегическими проектами",
+            title: "Управление стратегическими коммуникациями",
         },
         {
             id: "4",
             img: require("../../images/course_bg.png"),
             from_date: "21.05.2022",
-            title: "Управление стратегическими проектами",
+            title: "Управление стратегическими коммуникациями",
         },
     ];
 
@@ -113,7 +113,7 @@ export default function CoursesSl() {
         <FlatList
             data={courses}
             renderItem={({ item }) => (
-                <View style={theme === "dark" ? styles.itemDark : styles.item}>
+                <View style={[theme === "dark" ? styles.itemDark : styles.item, { borderRadius: 25 }]}>
                     <View
                         style={{
                             alignItems: "center",
@@ -125,21 +125,19 @@ export default function CoursesSl() {
                     <View
                         style={theme === "dark" ? styles.timeBgDark : styles.timeBg}>
                         <Text
-                            style={
-                                theme === "dark" ? styles.timeTitleDark : styles.timeTitle
-                            }>
+                            style={theme === "dark" ? styles.timeTitleDark : styles.timeTitle}>
                             {item.from_date}
                         </Text>
                     </View>
 
-                    <Text style={theme === "dark" ? styles.titleDark : styles.title}>
+                    <Text style={[theme === "dark" ? styles.titleDark : styles.title, { fontSize: 22, width: '100%', marginLeft: 5 }]}>
                         {item.title}
                     </Text>
 
                     <View style={{ alignItems: "center" }}>
                         <TouchableOpacity style={styles.buttonComplete} onPress={() => Alert.alert('Window in process...')}>
-                            <Text style={{ fontFamily: "gilroy-medium", fontSize: 17 }}>
-                                Подробнее
+                            <Text style={{ fontFamily: "gilroy-medium", fontSize: 20 }}>
+                                Домашняя работа
                             </Text>
                         </TouchableOpacity>
                     </View>
@@ -191,7 +189,7 @@ const styles = StyleSheet.create({
     },
     buttonComplete: {
         backgroundColor: '#90B3E7',
-        width: 319,
+        width: 350,
         height: 50,
         alignItems: 'center',
         justifyContent: 'center',
@@ -223,6 +221,9 @@ const styles = StyleSheet.create({
     },
     image: {
         marginBottom: 16,
+        resizeMode: 'cover',
+        width: '100%',
+        borderRadius: 25,
     },
     dotStyle: {
         width: 10,

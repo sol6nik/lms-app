@@ -44,7 +44,7 @@ export default function PairsSl() {
     );
 
     const PairSlideComponent = ({ item }) => (
-        <View style={theme === 'dark' ? styles.itemDark : styles.item}>
+        <View style={[theme === 'dark' ? styles.itemDark : styles.item, { borderRadius: 25 }]}>
             <View>
 
                 <View style={styles.timeBg}>
@@ -54,12 +54,11 @@ export default function PairsSl() {
 
                 <View style={styles.buttonContainer}>
                     <TouchableOpacity style={styles.btnHw}>
-                        <Text style={{ fontFamily: 'gilroy-semibold' }} onPress={() => Alert.alert('Home work')}>Домашняя работа</Text>
+                        <Text style={{ fontFamily: 'gilroy-semibold', fontSize: 15 }} onPress={() => Alert.alert('Home work')}>Домашняя работа</Text>
                     </TouchableOpacity>
 
-                    <TouchableOpacity style={theme === 'dark' ? styles.btnAddDark : styles.btnAdd} onPress={() => Alert.alert('Add Task')
-                    }>
-                        <Text style={[theme === 'dark' ? styles.btnTitleDark : styles.btnTitle, { fontFamily: 'gilroy-semibold' }]}>Добавть задачу</Text>
+                    <TouchableOpacity style={theme === 'dark' ? styles.btnAddDark : styles.btnAdd} onPress={() => Alert.alert('Add Task')}>
+                        <Text style={[theme === 'dark' ? styles.btnTitleDark : styles.btnTitle, { fontFamily: 'gilroy-semibold', fontSize: 15 }]}>Добавить задачу</Text>
                     </TouchableOpacity>
                 </View>
             </View>
@@ -76,7 +75,6 @@ export default function PairsSl() {
             keyExtractor={item => item.id}
         />
     )
-
 }
 
 
