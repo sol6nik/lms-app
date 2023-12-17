@@ -1,0 +1,19 @@
+{
+  "expo": {
+    "name": "MosSdo",
+    "slug": "MosSdo",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "android": {
+      "package": "mospol.apl"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "f4f9ad10-0230-4bba-8f6f-91109aabd687"
+      }
+    }
+  },
+  "name": "MosSdo"
+}
