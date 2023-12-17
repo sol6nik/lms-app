@@ -72,7 +72,6 @@ export default function CoursesScreen() {
                     style={[
                       styles.courseName,
                       theme == "dark" ? stylesDark.text : {},
-                      { fontFamily: "gilroy-semibold" },
                     ]}
                   >
                     {item.courseName}

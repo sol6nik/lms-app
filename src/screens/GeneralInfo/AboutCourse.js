@@ -57,7 +57,9 @@ function AboutCourse({ navigation: { goBack } }) {
         <Text
           style={[
             theme === "dark" ? styles.titleDark : styles.title,
-            { fontFamily: "gilroy-semibold" },
+            {
+              fontFamily: "gilroy-semibold",
+            },
           ]}
         >
           {item.title}
@@ -122,18 +124,35 @@ function AboutCourse({ navigation: { goBack } }) {
   );
 
   return (
-    <View style={styles.container}>
+    <View
+      style={[
+        styles.container,
+        theme == "dark" ? stylesDark.container : {},
+        { fontFamily: "gilroy-semibold" },
+      ]}
+    >
       <TouchableOpacity onPress={() => goBack()} style={styles.btnBack}>
         <Ionicons name="chevron-back" size={24} color="#90B3E7" />
       </TouchableOpacity>
 
-      <Text style={styles.description}>Описание курса</Text>
+      <Text
+        style={[
+          styles.description,
+          { color: theme == "dark" ? "#FFF" : "#000" },
+        ]}
+      >
+        Описание курса
+      </Text>
 
       <Text style={styles.date}>C 01.02.2023</Text>
 
-      <Text style={styles.coach}>Кто ведет курс</Text>
+      <Text
+        style={[styles.coach, { color: theme == "dark" ? "#FFF" : "#000" }]}
+      >
+        Кто ведет курс
+      </Text>
       {/* style={styles.courseContainer} */}
-      <View>
+      <View style={styles.user}>
         <View
           style={{
             flexDirection: "row",
@@ -145,8 +164,10 @@ function AboutCourse({ navigation: { goBack } }) {
           <Text
             style={[
               styles.courseName,
-              theme == "dark" ? stylesDark.text : {},
-              { fontFamily: "gilroy-semibold" },
+              {
+                fontFamily: "gilroy-semibold",
+                color: theme == "dark" ? "#FFF" : "#000",
+              },
             ]}
           >
             Иван Иванов
@@ -196,7 +217,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     marginTop: 16,
     marginBottom: 27,
-    color: "#fff",
+    color: "#000",
   },
   buttonContainer: {
     flexDirection: "row",
@@ -264,7 +285,7 @@ const styles = StyleSheet.create({
   },
   boxDark: {
     marginBottom: 10,
-    backgroundColor: "#393A39",
+    backgroundColor: "#292929",
     borderRadius: 20,
   },
   headline: {
@@ -275,8 +296,8 @@ const styles = StyleSheet.create({
   },
   headlineDark: {
     fontSize: 25,
-    marginTop: 16,
-    marginBottom: 27,
+    marginTop: 18,
+    marginBottom: 18,
     color: "#fff",
   },
   description: {
@@ -307,6 +328,35 @@ const styles = StyleSheet.create({
     paddingTop: 16,
     paddingBottom: 16,
     fontSize: 16,
-    fontWeight: 400,
+  },
+  user: {
+    marginBottom: 20,
+  },
+});
+
+const stylesDark = StyleSheet.create({
+  container: {
+    backgroundColor: "#292929",
+  },
+  header: {
+    padding: 20,
+    paddingVertical: 0,
+    flexDirection: "row",
+    height: 50,
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginTop: 10,
+    borderBottomLeftRadius: 15,
+    borderBottomRightRadius: 15,
+  },
+  search: {
+    flexDirection: "row",
+    alignItems: "center",
+    width: 200,
+    height: 35,
+    padding: 15,
+    paddingVertical: 0,
+    backgroundColor: "#B0B7BD",
+    borderRadius: 10,
   },
 });
